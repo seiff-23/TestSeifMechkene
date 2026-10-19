@@ -1,0 +1,9 @@
+<h1>Liste des voyages</h1>
+<p class="badge text-bg-warning">Nombre de voyages disponibles :{{nbVoyages()}} Voyages</p>
+
+@for (v of voyages(); track v.id; let i = $index) {
+    <seif-trip-item [trip]="v"></seif-trip-item>
+} @empty {
+ <p>Aucun voyage disponible</p>
+}
+<p>Donnez le nombre de jours minimum :</p><input type="text" (click)="afficherVoyages()"><button>Afficher</button>

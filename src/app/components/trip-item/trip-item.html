@@ -1,0 +1,12 @@
+<div [class]="trip.id == 1 ? 'badge text-bg-warning' : 'badge text-bg-success'">
+    <img [src]="trip.photo" [alt]="trip.destination" width="70px" height="70px">
+    <h2>{{trip.destination}}</h2>
+    <p>Prix : {{trip.price}} DT</p>
+    <p>Durée : {{trip.nbDays | period }} jours</p>
+    <input type="checkbox" [checked]="trip.visa" disabled> Visa
+    <p class="badge text-bg-secondary">{{trip.nbPlaces}}</p>
+    @if ({{trip.nbPlaces}} > 0) {
+        <button (click)="onReserve()">Reserver</button>
+    }
+
+</div>
